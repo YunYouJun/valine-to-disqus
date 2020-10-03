@@ -31,6 +31,10 @@ yarn convert
 # npm run convert
 ```
 
+> [Custom XML Import Format | Disqus](https://help.disqus.com/en/articles/1717222-custom-xml-import-format)
+
+[Disqus 导入地址](https://import.disqus.com/)
+
 ## 配置
 
 | 名称         | 描述                    | 默认（示例）                 |

@@ -94,5 +94,5 @@ valineComments.results.forEach((comment) => {
 });
 
 const disqusXml = xmlHead + items + xmlTail;
-fs.writeFileSync("./coverted/disqus-comment.xml", disqusXml);
+fs.writeFileSync(config.path.disqus, disqusXml);
 console.log("Valine to Disqus 转换成功!");

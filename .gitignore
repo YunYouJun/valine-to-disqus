@@ -1,0 +1,18 @@
+# Custom
+.DS_Store
+
+# Build
+dist
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+.env.test

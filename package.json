@@ -1,0 +1,27 @@
+{
+  "name": "valine-to-disqus",
+  "version": "0.0.1",
+  "description": "Migrate comments from valine to disqus.",
+  "main": "src/index.js",
+  "scripts": {
+    "convert": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunYouJun/valine-to-disqus.git"
+  },
+  "author": {
+    "name": "YunYouJun",
+    "url": "https://www.yunyoujun.cn",
+    "email": "me@yunyoujun.cn"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YunYouJun/valine-to-disqus/issues"
+  },
+  "homepage": "https://github.com/YunYouJun/valine-to-disqus#readme",
+  "dependencies": {
+    "dayjs": "^1.9.1",
+    "md5": "^2.3.0"
+  }
+}

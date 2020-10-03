@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dsq="http://www.disqus.com/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.0/"
+>
+  <channel>
+
+    <item>
+      <title>/posts/make-an-avg-engine/</title>
+      <link>https://www.yunyoujun.cn/posts/make-an-avg-engine/</link>
+      <content:encoded><![CDATA[/posts/make-an-avg-engine/]]></content:encoded>
+      <dsq:thread_identifier>/posts/make-an-avg-engine/</dsq:thread_identifier>
+      <wp:post_date_gmt>Mon, 28 Sep 2020 13:17:34 GMT</wp:post_date_gmt>
+      <wp:comment_status>open</wp:comment_status>
+      <wp:comment>
+        <!-- sso only; see docs -->
+        <dsq:remote>
+          <!-- unique internal identifier; username, user id, etc. -->
+          <dsq:id>flottant1516@gmail.com</dsq:id>
+          <!-- avatar -->
+          <dsq:avatar>https://www.gravatar.com/avatar/b65370326f86c1b1e8dba69c9d6a6de5</dsq:avatar>
+        </dsq:remote>
+        <wp:comment_id>5f7761bb6cec660345437a22</wp:comment_id>
+        <wp:comment_author>flottant</wp:comment_author>
+        <wp:comment_author_email>flottant1516@gmail.com</wp:comment_author_email>
+        <wp:comment_author_url>flot.tech</wp:comment_author_url>
+        <wp:comment_author_IP>10.30.2.119</wp:comment_author_IP>
+        <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
+        <wp:comment_date_gmt>Fri, 02 Oct 2020 17:22:03 GMT</wp:comment_date_gmt>
+        <wp:comment_content><![CDATA[<p>期待.jpg</p>
+]]></wp:comment_content>
+        <!-- is this comment approved? 0/1 -->
+        <wp:comment_approved>1</wp:comment_approved>
+        <wp:comment_parent>undefined</wp:comment_parent>
+      </wp:comment>
+    </item>
+
+    <item>
+      <title>/diary/try-to-become-a-teacher/</title>
+      <link>https://www.yunyoujun.cn/diary/try-to-become-a-teacher/</link>
+      <content:encoded><![CDATA[/diary/try-to-become-a-teacher/]]></content:encoded>
+      <dsq:thread_identifier>/diary/try-to-become-a-teacher/</dsq:thread_identifier>
+      <wp:post_date_gmt>Sat, 12 Sep 2020 16:42:05 GMT</wp:post_date_gmt>
+      <wp:comment_status>open</wp:comment_status>
+      <wp:comment>
+        <!-- sso only; see docs -->
+        <dsq:remote>
+          <!-- unique internal identifier; username, user id, etc. -->
+          <dsq:id>me@yunyoujun.cn</dsq:id>
+          <!-- avatar -->
+          <dsq:avatar>https://www.gravatar.com/avatar/515e2b667cc65fac595640adbf6bfd76</dsq:avatar>
+        </dsq:remote>
+        <wp:comment_id>5f75bf40a0dfbd5120fea014</wp:comment_id>
+        <wp:comment_author>云游君</wp:comment_author>
+        <wp:comment_author_email>me@yunyoujun.cn</wp:comment_author_email>
+        <wp:comment_author_url>https://yunyoujun.cn</wp:comment_author_url>
+        <wp:comment_author_IP>10.30.34.77</wp:comment_author_IP>
+        <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
+        <wp:comment_date_gmt>Thu, 01 Oct 2020 11:36:32 GMT</wp:comment_date_gmt>
+        <wp:comment_content><![CDATA[<p><a class="at" href="#5f6ac85e6cec6603452b3203">@Joker </a> ,  <img alt="tv_doge" referrerPolicy="no-referrer" class="vemoji" src="//i0.hdslb.com/bfs/emote/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png" />承蒙大人厚爱，阁下只是管中窥豹，来日我必高抬贵手，不吝赐教。</p>
+]]></wp:comment_content>
+        <!-- is this comment approved? 0/1 -->
+        <wp:comment_approved>1</wp:comment_approved>
+        <wp:comment_parent>5f6ac85e6cec6603452b3203</wp:comment_parent>
+      </wp:comment>
+    </item>
+
+    <item>
+      <title>/diary/try-to-become-a-teacher/</title>
+      <link>https://www.yunyoujun.cn/diary/try-to-become-a-teacher/</link>
+      <content:encoded><![CDATA[/diary/try-to-become-a-teacher/]]></content:encoded>
+      <dsq:thread_identifier>/diary/try-to-become-a-teacher/</dsq:thread_identifier>
+      <wp:post_date_gmt>Sat, 12 Sep 2020 16:42:05 GMT</wp:post_date_gmt>
+      <wp:comment_status>open</wp:comment_status>
+      <wp:comment>
+        <!-- sso only; see docs -->
+        <dsq:remote>
+          <!-- unique internal identifier; username, user id, etc. -->
+          <dsq:id>me@jokerm.com</dsq:id>
+          <!-- avatar -->
+          <dsq:avatar>https://www.gravatar.com/avatar/9bc60499b2a216fc2433e685573a324e</dsq:avatar>
+        </dsq:remote>
+        <wp:comment_id>5f6ac85e6cec6603452b3203</wp:comment_id>
+        <wp:comment_author>Joker</wp:comment_author>
+        <wp:comment_author_email>me@jokerm.com</wp:comment_author_email>
+        <wp:comment_author_url>https://jokerm.com</wp:comment_author_url>
+        <wp:comment_author_IP>10.30.2.119</wp:comment_author_IP>
+        <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
+        <wp:comment_date_gmt>Wed, 23 Sep 2020 04:00:30 GMT</wp:comment_date_gmt>
+        <wp:comment_content><![CDATA[<p>写的很好，我还要看，希望你不要不识抬举 <img alt="tv_doge" referrerPolicy="no-referrer" class="vemoji" src="//i0.hdslb.com/bfs/emote/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png" /></p>
+]]></wp:comment_content>
+        <!-- is this comment approved? 0/1 -->
+        <wp:comment_approved>1</wp:comment_approved>
+        <wp:comment_parent>undefined</wp:comment_parent>
+      </wp:comment>
+    </item>
+
+  </channel>
+</rss>  

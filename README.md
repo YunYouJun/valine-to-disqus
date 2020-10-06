@@ -21,8 +21,10 @@ yarn
 # npm install
 ```
 
-因为用到了一个 md5 的库，用来拼接 URL 获取 Gravatar 头像链接。
-以及 dayjs 用来处理时间格式。
+因为用到了一个 dayjs 的库用来处理时间格式。
+
+> 虽然也用了 md5，用来拼接 URL 获取 Gravatar 头像链接。
+> 但头像只能配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) 才能使用。
 
 ### 转换格式
 

@@ -17,6 +17,11 @@ dayjs@^1.9.1:
   resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.9.1.tgz?cache=0&sync_timestamp=1601296772816&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdayjs%2Fdownload%2Fdayjs-1.9.1.tgz#201a755f7db5103ed6de63ba93a984141c754541"
   integrity sha1-IBp1X321ED7W3mO6k6mEFBx1RUE=
 
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 is-buffer@~1.1.6:
   version "1.1.6"
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"

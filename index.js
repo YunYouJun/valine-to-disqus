@@ -52,6 +52,18 @@ function getPostByUrl(url) {
 let items = "";
 valineComments.results.forEach((comment) => {
   const post = getPostByUrl(comment.url);
+
+  const ssoContent = `
+    <!-- sso only; see docs -->
+    <dsq:remote>
+      <!-- unique internal identifier; username, user id, etc. -->
+      <dsq:id>${comment.mail}</dsq:id>
+      <!-- avatar -->
+      <dsq:avatar>${
+        "https://www.gravatar.com/avatar/" + md5(comment.mail)
+      }</dsq:avatar>
+    </dsq:remote>`;
+
   const item = `
     <item>
       <title>${post.url || comment.url}</title>
@@ -63,20 +75,14 @@ valineComments.results.forEach((comment) => {
       )}</wp:post_date_gmt>
       <wp:comment_status>open</wp:comment_status>
       <wp:comment>
-        <!-- sso only; see docs -->
-        <dsq:remote>
-          <!-- unique internal identifier; username, user id, etc. -->
-          <dsq:id>${comment.mail}</dsq:id>
-          <!-- avatar -->
-          <dsq:avatar>${
-            "https://www.gravatar.com/avatar/" + md5(comment.mail)
-          }</dsq:avatar>
-        </dsq:remote>
+        ${config.sso ? ssoContent : ""}
         <wp:comment_id>${comment.objectId}</wp:comment_id>
         <wp:comment_author>${comment.nick}</wp:comment_author>
         <wp:comment_author_email>${comment.mail}</wp:comment_author_email>
         <wp:comment_author_url>${comment.link}</wp:comment_author_url>
-        <wp:comment_author_IP>${comment.ip}</wp:comment_author_IP>
+        <wp:comment_author_IP>${
+          comment.ip ? comment.ip : ""
+        }</wp:comment_author_IP>
         <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
         <wp:comment_date_gmt>${dayjs(comment.createdAt).format(
           "YYYY-MM-DD HH:mm:ss"

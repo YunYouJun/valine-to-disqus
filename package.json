@@ -22,6 +22,7 @@
   "homepage": "https://github.com/YunYouJun/valine-to-disqus#readme",
   "dependencies": {
     "dayjs": "^1.9.1",
+    "dotenv": "^8.2.0",
     "md5": "^2.3.0"
   }
 }

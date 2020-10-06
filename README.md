@@ -39,11 +39,12 @@ yarn convert
 
 ## 配置
 
-| 名称         | 描述                    | 默认（示例）                 |
-| ------------ | ----------------------- | ---------------------------- |
-| site         | 站点 URL                | `https://www.yunyoujun.cn`   |
-| path.comment | Valine Comment 数据路径 | `./data/valine-comment.json` |
-| path.counter | Valine Counter 数据路径 | `./data/valine-counter.json` |
+| 名称         | 描述                                                                                       | 默认（示例）                 |
+| ------------ | ------------------------------------------------------------------------------------------ | ---------------------------- |
+| site         | 站点 URL                                                                                   | `https://www.yunyoujun.cn`   |
+| path.comment | Valine Comment 数据路径                                                                    | `./data/valine-comment.json` |
+| path.counter | Valine Counter 数据路径                                                                    | `./data/valine-counter.json` |
+| sso          | 是否有配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) | false                        |
 
 ## 项目结构
 

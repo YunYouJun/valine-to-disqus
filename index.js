@@ -54,15 +54,15 @@ valineComments.results.forEach((comment) => {
   const post = getPostByUrl(comment.url);
 
   const ssoContent = `
-    <!-- sso only; see docs -->
-    <dsq:remote>
-      <!-- unique internal identifier; username, user id, etc. -->
-      <dsq:id>${comment.mail}</dsq:id>
-      <!-- avatar -->
-      <dsq:avatar>${
-        "https://www.gravatar.com/avatar/" + md5(comment.mail)
-      }</dsq:avatar>
-    </dsq:remote>`;
+        <!-- sso only; see docs -->
+        <dsq:remote>
+          <!-- unique internal identifier; username, user id, etc. -->
+          <dsq:id>${comment.mail}</dsq:id>
+          <!-- avatar -->
+          <dsq:avatar>${
+            "https://www.gravatar.com/avatar/" + md5(comment.mail)
+          }</dsq:avatar>
+        </dsq:remote>`;
 
   const item = `
     <item>
@@ -74,8 +74,7 @@ valineComments.results.forEach((comment) => {
         "YYYY-MM-DD HH:mm:ss"
       )}</wp:post_date_gmt>
       <wp:comment_status>open</wp:comment_status>
-      <wp:comment>
-        ${config.sso ? ssoContent : ""}
+      <wp:comment>${config.sso ? ssoContent : ""}
         <wp:comment_id>${comment.objectId}</wp:comment_id>
         <wp:comment_author>${comment.nick}</wp:comment_author>
         <wp:comment_author_email>${comment.mail}</wp:comment_author_email>

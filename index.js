@@ -59,7 +59,7 @@ valineComments.results.forEach((comment) => {
       <content:encoded><![CDATA[${comment.url}]]></content:encoded>
       <dsq:thread_identifier>${comment.url}</dsq:thread_identifier>
       <wp:post_date_gmt>${dayjs(post.createdAt).format(
-        "YYYY-MM-DD HH:mm-ss"
+        "YYYY-MM-DD HH:mm:ss"
       )}</wp:post_date_gmt>
       <wp:comment_status>open</wp:comment_status>
       <wp:comment>
@@ -79,7 +79,7 @@ valineComments.results.forEach((comment) => {
         <wp:comment_author_IP>${comment.ip}</wp:comment_author_IP>
         <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
         <wp:comment_date_gmt>${dayjs(comment.createdAt).format(
-          "YYYY-MM-DD HH:mm-ss"
+          "YYYY-MM-DD HH:mm:ss"
         )}</wp:comment_date_gmt>
         <wp:comment_content><![CDATA[${comment.comment}]]></wp:comment_content>
         <!-- is this comment approved? 0/1 -->

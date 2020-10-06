@@ -12,7 +12,7 @@ try {
   valineCounters = JSON.parse(counterText);
 } catch (error) {
   console.log(error.message);
-  console.log("不放 Counter 的话，就用 url 作为标题了！");
+  console.log("不放 Counter 数据的话，就用 url 作为标题了！");
 }
 
 const xmlHead = `<?xml version="1.0" encoding="UTF-8"?>
@@ -58,8 +58,7 @@ valineComments.results.forEach((comment) => {
       <link>${config.site + comment.url}</link>
       <content:encoded><![CDATA[${comment.url}]]></content:encoded>
       <dsq:thread_identifier>${comment.url}</dsq:thread_identifier>
-      <wp:post_date_gmt>${dayjs(
-        post.createdAt,
+      <wp:post_date_gmt>${dayjs(post.createdAt).format(
         "YYYY-MM-DD HH:mm-ss"
       )}</wp:post_date_gmt>
       <wp:comment_status>open</wp:comment_status>
@@ -79,14 +78,13 @@ valineComments.results.forEach((comment) => {
         <wp:comment_author_url>${comment.link}</wp:comment_author_url>
         <wp:comment_author_IP>${comment.ip}</wp:comment_author_IP>
         <!-- comment datetime, in GMT. Must be YYYY-MM-DD HH:MM:SS 24-hour format. -->
-        <wp:comment_date_gmt>${dayjs(
-          comment.createdAt,
+        <wp:comment_date_gmt>${dayjs(comment.createdAt).format(
           "YYYY-MM-DD HH:mm-ss"
         )}</wp:comment_date_gmt>
         <wp:comment_content><![CDATA[${comment.comment}]]></wp:comment_content>
         <!-- is this comment approved? 0/1 -->
         <wp:comment_approved>${Number(!comment.isSpam)}</wp:comment_approved>
-        <wp:comment_parent>${comment.pid}</wp:comment_parent>
+        <wp:comment_parent>${comment.pid ? comment.pid : ""}</wp:comment_parent>
       </wp:comment>
     </item>
 `;

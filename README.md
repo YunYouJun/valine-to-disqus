@@ -24,7 +24,7 @@ yarn
 因为用到了一个 dayjs 的库用来处理时间格式。
 
 > 虽然也用了 md5，用来拼接 URL 获取 Gravatar 头像链接。
-> 但头像只能配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) 才能使用。
+> 但头像只有配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) 才能使用。
 
 ### 转换格式
 
@@ -35,16 +35,23 @@ yarn convert
 
 > [Custom XML Import Format | Disqus](https://help.disqus.com/en/articles/1717222-custom-xml-import-format)
 
+### 导入
+
 [Disqus 导入地址](https://import.disqus.com/)
 
 ## 配置
 
-| 名称         | 描述                                                                                       | 默认（示例）                 |
-| ------------ | ------------------------------------------------------------------------------------------ | ---------------------------- |
-| site         | 站点 URL                                                                                   | `https://www.yunyoujun.cn`   |
-| path.comment | Valine Comment 数据路径                                                                    | `./data/valine-comment.json` |
-| path.counter | Valine Counter 数据路径                                                                    | `./data/valine-counter.json` |
-| sso          | 是否有配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) | false                        |
+> config.js
+
+| 名称         | 描述                                                                                       | 默认（示例）                     |
+| ------------ | ------------------------------------------------------------------------------------------ | -------------------------------- |
+| site         | 站点 URL                                                                                   | `https://www.yunyoujun.cn`       |
+| path.comment | Valine Comment 数据路径                                                                    | `./data/valine-comment.json`     |
+| path.counter | Valine Counter 数据路径                                                                    | `./data/valine-counter.json`     |
+| path.disqus  | 转换后 Disqus 格式文件的路径                                                               | `./converted/disqus-comment.xml` |
+| sso          | 是否有配置过 [SSO](https://help.disqus.com/en/articles/1717160-integrating-single-sign-on) | false                            |
+
+> 其实 `cp .env.example .env`，然后配置 `.env` 也行，随你喜欢吧～
 
 ## 项目结构
 
@@ -52,3 +59,4 @@ yarn convert
 | --------- | -------------------------------------------- |
 | data      | 放的是评论和计数器数据（我随便放了几个示例） |
 | converted | 被转换后的数据                               |
+| config.js | 配置文件                                     |

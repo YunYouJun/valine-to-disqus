@@ -53,6 +53,9 @@ let items = "";
 valineComments.results.forEach((comment) => {
   const post = getPostByUrl(comment.url);
   if (config.encode) comment.url = encodeURI(comment.url);
+  comment.comment = comment.comment
+    .replace(/<a class="at" href="#.*?">@.*?<\/a>( , |)/, "")
+    .replace(/<img alt=".*?" referrerPolicy="no-referrer" class="vemoji" src="(.*?)" \/>/, "https:$1 ");
 
   const ssoContent = `
         <!-- sso only; see docs -->

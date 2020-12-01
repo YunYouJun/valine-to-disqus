@@ -52,6 +52,7 @@ function getPostByUrl(url) {
 let items = "";
 valineComments.results.forEach((comment) => {
   const post = getPostByUrl(comment.url);
+  if (config.encode) comment.url = encodeURI(comment.url);
 
   const ssoContent = `
         <!-- sso only; see docs -->

@@ -2,32 +2,17 @@ const fs = require("fs");
 const config = require("./config");
 const md5 = require("md5");
 const dayjs = require("dayjs");
-
-const commentText = fs.readFileSync(config.path.comment, "utf-8");
-const valineComments = JSON.parse(commentText);
+const logger = require("./logger");
 
 let valineCounters = "";
+
 try {
   const counterText = fs.readFileSync(config.path.counter, "utf-8");
   valineCounters = JSON.parse(counterText);
 } catch (error) {
-  console.log(error.message);
-  console.log("不放 Counter 数据的话，就用 url 作为标题了！");
+  logger.error(error.message);
+  logger.warn("不放 Counter 数据的话，就用 url 作为标题了！");
 }
-
-const xmlHead = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:dsq="http://www.disqus.com/"
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:wp="http://wordpress.org/export/1.0/"
->
-  <channel>
-`;
-const xmlTail = `
-  </channel>
-</rss>  
-`;
 
 /**
  * 根据 url 从 Counter 中获取文章对象
@@ -39,7 +24,7 @@ function getPostByUrl(url) {
     createdAt: "",
   };
   if (valineCounters) {
-    valineCounters.results.some((counter) => {
+    valineCounters["results"].some((counter) => {
       if (counter.url === url) {
         post = counter;
         return true;
@@ -49,15 +34,36 @@ function getPostByUrl(url) {
   return post;
 }
 
-let items = "";
-valineComments.results.forEach((comment) => {
-  const post = getPostByUrl(comment.url);
-  if (config.encode) comment.url = encodeURI(comment.url);
-  comment.comment = comment.comment
-    .replace(/<a class="at" href="#.*?">@.*?<\/a>( , |)/, "")
-    .replace(/<img alt=".*?" referrerPolicy="no-referrer" class="vemoji" src="(.*?)" \/>/, "https:$1 ");
+/**
+ * 转换为 disqus xml 格式
+ * @param {*} valineComments JSON 格式
+ */
+function toDisqusXml(valineComments) {
+  const xmlHead = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dsq="http://www.disqus.com/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.0/"
+>
+  <channel>
+`;
+  const xmlTail = `
+  </channel>
+</rss>  
+`;
+  let items = "";
+  valineComments.results.forEach((comment) => {
+    const post = getPostByUrl(comment.url);
+    if (config.encode) comment.url = encodeURI(comment.url);
+    comment.comment = comment.comment
+      .replace(/<a class="at" href="#.*?">@.*?<\/a>( , |)/, "")
+      .replace(
+        /<img alt=".*?" referrerPolicy="no-referrer" class="vemoji" src="(.*?)" \/>/,
+        "https:$1 "
+      );
 
-  const ssoContent = `
+    const ssoContent = `
         <!-- sso only; see docs -->
         <dsq:remote>
           <!-- unique internal identifier; username, user id, etc. -->
@@ -68,7 +74,7 @@ valineComments.results.forEach((comment) => {
           }</dsq:avatar>
         </dsq:remote>`;
 
-  const item = `
+    const item = `
     <item>
       <title>${post.url || comment.url}</title>
       <link>${config.site + comment.url}</link>
@@ -97,9 +103,14 @@ valineComments.results.forEach((comment) => {
       </wp:comment>
     </item>
 `;
-  items += item;
-});
+    items += item;
+  });
 
-const disqusXml = xmlHead + items + xmlTail;
-fs.writeFileSync(config.path.disqus, disqusXml);
-console.log("Valine to Disqus 转换成功!");
+  const disqusXml = xmlHead + items + xmlTail;
+  return disqusXml;
+}
+
+module.exports = {
+  getPostByUrl,
+  toDisqusXml,
+};

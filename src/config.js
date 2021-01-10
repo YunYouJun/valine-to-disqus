@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 module.exports = {
   path: {
     comment: process.env.PATH_COMMENT || "./data/valine-comment.json",
